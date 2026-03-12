@@ -13,4 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+
+      - name: Add Go bin to PATH
+        run: echo "${HOME}/go/bin" >> ${GITHUB_PATH}
+
+      - name: Docs
+        run: make prep docs diff

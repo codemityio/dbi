@@ -7,6 +7,18 @@ fi
 
 case "$1" in
 
+"prep")
+  IMAGES="alpine,pandoc" scripts/docker.sh build
+  go install github.com/"${VENDOR}"/notatio@latest
+  ;;
+
+"diff")
+  (git diff --quiet && git diff --cached --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]) || {
+    echo "error: changes detected..."
+    exit 1
+  }
+  ;;
+
 "version")
   git tag -l | sort -V | tail -n1
   ;;
