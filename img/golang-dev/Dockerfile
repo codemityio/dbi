@@ -2,6 +2,7 @@ FROM codemity/golang:latest AS final
 
 RUN apk update \
     && apk upgrade \
+    && apk add make git jq \
     && go install github.com/hairyhenderson/gomplate/v3/cmd/gomplate@latest \
     && go install golang.org/x/tools/cmd/goimports@latest \
     && go install mvdan.cc/gofumpt@latest \
