@@ -1,9 +1,8 @@
-FROM codemity/golang:latest AS final
+FROM codemity/golang:latest AS build
 
-RUN apk update \
-    && apk upgrade \
-    && apk add make git jq \
-    && go install github.com/hairyhenderson/gomplate/v3/cmd/gomplate@latest \
+RUN apk add --no-cache git
+
+RUN go install github.com/hairyhenderson/gomplate/v3/cmd/gomplate@latest \
     && go install golang.org/x/tools/cmd/goimports@latest \
     && go install mvdan.cc/gofumpt@latest \
     && go install github.com/daixiang0/gci@latest \
@@ -13,3 +12,9 @@ RUN apk update \
     && go install golang.org/x/vuln/cmd/govulncheck@latest \
     && go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest \
     && go install github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+
+FROM codemity/golang:latest AS final
+
+RUN apk add --no-cache make git jq bash
+
+COPY --from=build /go/bin/* /usr/local/bin/
