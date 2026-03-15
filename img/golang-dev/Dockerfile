@@ -15,7 +15,7 @@ RUN go install github.com/hairyhenderson/gomplate/v3/cmd/gomplate@latest \
     && go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest \
     && go install github.com/golang-migrate/migrate/v4/cmd/migrate@latest
 
-FROM codemity/golang:latest AS final
+FROM ${VENDOR}/golang:latest AS final
 
 RUN apk add --no-cache make git jq bash
 
