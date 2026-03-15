@@ -10,6 +10,7 @@ images=$(find img/*/ -maxdepth 0 -type d -exec basename {} \;)
 for target in ${images//,/ }; do
   docker image build \
     --target final \
+    --build-arg VENDOR \
     -t "${VENDOR}/${target}:latest" \
     -f "img/${target}/Dockerfile" "img/${target}/."
 done

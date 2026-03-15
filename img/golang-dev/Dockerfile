@@ -1,4 +1,6 @@
-FROM codemity/golang:latest AS build
+ARG VENDOR="vendor"
+
+FROM ${VENDOR}/golang:latest AS build
 
 RUN apk add --no-cache git
 
