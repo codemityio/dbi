@@ -13,7 +13,7 @@ ENV PUPPETEER_EXECUTABLE_PATH=/usr/lib/chromium/chrome
 
 WORKDIR /opt/app
 
-COPY --from=ghcr.io/plantuml/plantuml:latest /opt/plantuml.jar /usr/local/bin/plantuml.jar
+COPY --from=ghcr.io/plantuml/plantuml:latest /opt/plantuml.jar /usr/local/lib/plantuml.jar
 
 RUN apk add --no-cache \
         graphviz \
