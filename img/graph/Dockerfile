@@ -2,14 +2,8 @@ ARG VENDOR="vendor"
 
 FROM ${VENDOR}/alpine:latest AS final
 
-ENV PATH="/opt/app/bin:${PATH}"
 ENV LANGUAGE=en_US.UTF-8
 ENV LANG=C.UTF-8
-ENV PLANTUML_LIMIT_SIZE=4096
-ENV INPUT_PATH=""
-ENV OUTPUT_FORMAT=svg
-ENV RECURSIVE=true
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/lib/chromium/chrome
 
 WORKDIR /opt/app
 
