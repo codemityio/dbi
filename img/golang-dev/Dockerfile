@@ -2,7 +2,7 @@ ARG VENDOR="vendor"
 
 FROM ${VENDOR}/golang:latest AS build
 
-RUN apk add --no-cache git
+RUN apk add --no-cache git pandoc
 
 RUN go install github.com/hairyhenderson/gomplate/v3/cmd/gomplate@latest \
     && go install golang.org/x/tools/cmd/goimports@latest \
