@@ -1,1 +1,1 @@
-FROM golang:1.25.8-alpine3.22 AS final
+FROM golang:1.26-alpine3.23 AS final
