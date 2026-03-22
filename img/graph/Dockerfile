@@ -10,6 +10,7 @@ WORKDIR /opt/app
 COPY --from=ghcr.io/plantuml/plantuml:latest /opt/plantuml.jar /usr/local/lib/plantuml.jar
 
 RUN apk add --no-cache \
+        pandoc \
         graphviz \
         openjdk11-jre \
         chromium \
