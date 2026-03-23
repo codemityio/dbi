@@ -19,6 +19,9 @@ next: ## Create a new version (bump prerelease or patch)
 build: ## Build all images
 	@scripts/build.sh
 
+buildx: ## Build all images (multi-platform)
+	@scripts/buildx.sh
+
 #################
 ## D O C K E R ##
 #################
