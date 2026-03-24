@@ -17,7 +17,7 @@ A repository of **Docker** base images.
 - [`golang`](img/golang/README.md) - **Golang** base image.
 - [`graph`](img/graph/README.md) - Base image containing packages to work with diagrams.
 - [`pandoc`](img/pandoc/README.md) - **Pandoc** universal document converter.
-- [`type`](img/type/README.md) - Base image containing packages to work with types (e.g. `quicktype`, `json2ts`).
+- [`type`](img/type/README.md) - Base image containing tools to work with types.
 - [`ubuntu`](img/ubuntu/README.md) - **Ubuntu** base image.
 
 ## License

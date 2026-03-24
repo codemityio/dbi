@@ -3,6 +3,7 @@
 ## Table of contents
 
 - [Summary](#summary)
+- [Tools](#tools)
 - [Manual](#manual)
   - [`quicktype`](#quicktype)
   - [`json2ts`](#json2ts)
@@ -10,7 +11,12 @@
 
 ## Summary
 
-Base image containing packages to work with types (e.g. `quicktype`, `json2ts`).
+Base image containing tools to work with types.
+
+## Tools
+
+- `quicktype` - <https://github.com/glideapps/quicktype>
+- `json2ts` - <https://github.com/bcherny/json-schema-to-typescript>
 
 ## Manual
 
