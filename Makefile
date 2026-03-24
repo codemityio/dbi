@@ -12,6 +12,16 @@ version: ## Print the most recent version
 next: ## Create a new version (bump prerelease or patch)
 	@scripts/tools.sh next
 
+###########
+## D E V ##
+###########
+
+prep: ## Prepare dev tools
+	@scripts/tools.sh prep
+
+diff: ## Check diff to ensure this project consistency
+	@scripts/tools.sh diff
+
 ###############
 ## B U I L D ##
 ###############
@@ -32,16 +42,6 @@ tag: ## ECR tag images
 push: ## ECR push images
 	@scripts/docker.sh push
 
-##########################
-## D A N G E R  Z O N E ##
-##########################
-
-reset: ## Reset the environment
-	@docker system prune <<< y || true
-	@docker volume prune <<< y || true
-	@rm -R -f tmp || true
-	@rm -R -f var || true
-
 #############
 ## D O C S ##
 #############
@@ -54,3 +54,13 @@ docs-main: ## Generate main docs
 
 docs-img: ## Generate img docs
 	@scripts/docs.sh img
+
+##########################
+## D A N G E R  Z O N E ##
+##########################
+
+reset: ## Reset the environment
+	@docker system prune <<< y || true
+	@docker volume prune <<< y || true
+	@rm -R -f tmp || true
+	@rm -R -f var || true
