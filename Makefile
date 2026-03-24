@@ -46,5 +46,11 @@ reset: ## Reset the environment
 ## D O C S ##
 #############
 
-docs: ## Generate all docs
+docs: docs-main  ## Generate all docs
+	@PACKAGES='$(shell find "${PWD}/img" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; 2>/dev/null)' make docs-img
+
+docs-main: ## Generate main docs
 	@scripts/docs.sh main
+
+docs-img: ## Generate img docs
+	@scripts/docs.sh img
