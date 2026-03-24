@@ -3,7 +3,7 @@
 ## Table of contents
 
 - [Summary](#summary)
-- [Man](#man)
+- [Manual](#manual)
   - [`quicktype`](#quicktype)
   - [`json2ts`](#json2ts)
 - [Usage](#usage)
@@ -12,7 +12,7 @@
 
 Base image containing packages to work with types (e.g. `quicktype`, `json2ts`).
 
-## Man
+## Manual
 
 ### `quicktype`
 
