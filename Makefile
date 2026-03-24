@@ -12,6 +12,16 @@ version: ## Print the most recent version
 next: ## Create a new version (bump prerelease or patch)
 	@scripts/tools.sh next
 
+###########
+## D E V ##
+###########
+
+prep: ## Prepare dev tools
+	@scripts/tools.sh prep
+
+diff: ## Check diff to ensure this project consistency
+	@scripts/tools.sh diff
+
 ###############
 ## B U I L D ##
 ###############
@@ -32,6 +42,19 @@ tag: ## ECR tag images
 push: ## ECR push images
 	@scripts/docker.sh push
 
+#############
+## D O C S ##
+#############
+
+docs: docs-main  ## Generate all docs
+	@PACKAGES='$(shell find "${PWD}/img" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; 2>/dev/null)' make docs-img
+
+docs-main: ## Generate main docs
+	@scripts/docs.sh main
+
+docs-img: ## Generate img docs
+	@scripts/docs.sh img
+
 ##########################
 ## D A N G E R  Z O N E ##
 ##########################
@@ -41,10 +64,3 @@ reset: ## Reset the environment
 	@docker volume prune <<< y || true
 	@rm -R -f tmp || true
 	@rm -R -f var || true
-
-#############
-## D O C S ##
-#############
-
-docs: ## Generate all docs
-	@scripts/docs.sh main
