@@ -8,7 +8,7 @@
 
 ## Summary
 
-**Pandoc** universal document converter.
+**Pandoc** universal document converter <https://github.com/jgm/pandoc>.
 
 ## Manual
 

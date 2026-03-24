@@ -8,6 +8,7 @@ fi
 case "$1" in
 
 "prep")
+  IMAGES="alpine,pandoc" scripts/docker.sh build
   go install github.com/"${VENDOR}"/notatio@latest
   ;;
 
