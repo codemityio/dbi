@@ -12,7 +12,7 @@ case "$1" in
 "buildx")
   set -euo pipefail
 
-  if [ -z "${IMAGES}" ]; then
+  if [ -z "${IMAGES:-}" ]; then
     images=$(find img/*/ -maxdepth 0 -type d -exec basename {} \; | sort)
     if [[ ${images} == "" ]]; then exit 0; fi
   else
@@ -34,7 +34,7 @@ case "$1" in
 "build")
   set -euo pipefail
 
-  if [ -z "${IMAGES}" ]; then
+  if [ -z "${IMAGES:-}" ]; then
     images=$(find img/*/ -maxdepth 0 -type d -exec basename {} \; | sort)
     if [[ ${images} == "" ]]; then exit 0; fi
   else
