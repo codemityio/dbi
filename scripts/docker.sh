@@ -9,6 +9,47 @@ fi
 
 case "$1" in
 
+"buildx")
+  set -euo pipefail
+
+  if [ -z "${IMAGES}" ]; then
+    images=$(find img/*/ -maxdepth 0 -type d -exec basename {} \; | sort)
+    if [[ ${images} == "" ]]; then exit 0; fi
+  else
+    images=${IMAGES}
+  fi
+
+  for target in ${images//,/ }; do
+    docker buildx build \
+      --platform linux/amd64,linux/arm64 \
+      --target final \
+      --build-arg VENDOR \
+      -t "${VENDOR}/${target}:latest" \
+      -t "${VENDOR}/${target}:$(scripts/tools.sh version)" \
+      --push \
+      -f "img/${target}/Dockerfile" "img/${target}/."
+  done
+  ;;
+
+"build")
+  set -euo pipefail
+
+  if [ -z "${IMAGES}" ]; then
+    images=$(find img/*/ -maxdepth 0 -type d -exec basename {} \; | sort)
+    if [[ ${images} == "" ]]; then exit 0; fi
+  else
+    images=${IMAGES}
+  fi
+
+  for target in ${images//,/ }; do
+    docker image build \
+      --target final \
+      --build-arg VENDOR \
+      -t "${VENDOR}/${target}:latest" \
+      -f "img/${target}/Dockerfile" "img/${target}/."
+  done
+  ;;
+
 "tag")
   images=$(find img/*/ -maxdepth 0 -type d -exec basename {} \;)
 

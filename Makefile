@@ -22,19 +22,15 @@ prep: ## Prepare dev tools
 diff: ## Check diff to ensure this project consistency
 	@scripts/tools.sh diff
 
-###############
-## B U I L D ##
-###############
-
-build: ## Build all images
-	@scripts/build.sh
-
-buildx: ## Build all images (multi-platform)
-	@scripts/buildx.sh
-
 #################
 ## D O C K E R ##
 #################
+
+build: ## Build all images
+	@scripts/docker.sh build
+
+buildx: ## Build all images (multi-platform)
+	@scripts/docker.sh buildx
 
 tag: ## ECR tag images
 	@scripts/docker.sh tag
