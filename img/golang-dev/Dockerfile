@@ -7,8 +7,7 @@ RUN apk add --no-cache make git jq bash
 
 COPY --from=golang /usr/local/go /usr/local/go
 
-ENV GOPATH=/go
-ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+ENV PATH=$PATH:/usr/local/go/bin
 
 RUN go install github.com/hairyhenderson/gomplate/v3/cmd/gomplate@latest \
     && go install golang.org/x/tools/cmd/goimports@latest \
@@ -16,4 +15,11 @@ RUN go install github.com/hairyhenderson/gomplate/v3/cmd/gomplate@latest \
     && go install go.uber.org/mock/mockgen@latest \
     && go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest \
     && go install golang.org/x/vuln/cmd/govulncheck@latest \
-    && rm -rf /go/pkg /go/src /root/.cache /tmp/* /var/tmp/*
+    && mv /root/go/bin/* /usr/local/bin \
+    && rm -rf /root/go /root/.cache /tmp/* /var/tmp/*
+
+COPY entrypoint.sh /
+
+RUN ["chmod", "+x", "/entrypoint.sh"]
+
+ENTRYPOINT ["/entrypoint.sh"]
