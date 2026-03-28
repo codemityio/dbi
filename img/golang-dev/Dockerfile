@@ -3,11 +3,12 @@ ARG VENDOR="vendor"
 FROM ${VENDOR}/golang:latest AS golang
 FROM ${VENDOR}/alpine:latest AS final
 
-RUN apk add --no-cache make git jq bash
+RUN apk add --no-cache gcc musl-dev make git jq bash
 
 COPY --from=golang /usr/local/go /usr/local/go
 
 ENV PATH=$PATH:/usr/local/go/bin
+ENV CGO_ENABLED=0
 
 RUN go install github.com/hairyhenderson/gomplate/v3/cmd/gomplate@latest \
     && go install golang.org/x/tools/cmd/goimports@latest \

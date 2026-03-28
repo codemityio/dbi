@@ -17,7 +17,7 @@ case "$1" in
   fi
   for target in ${targets//,/ }; do
     echo "img/${target}/..."
-    notatio toc --document="img/${target}/README.md" --header="Table of contents" --limiter-left="##" --limiter-right="## Summary" \
+    notatio toc --document="img/${target}/README.md" --header="Table of contents" --limiter-left="##" --limiter-right="## Summary" --index=1 \
       int --start-from-level=1 --start-from-item=1
     docker run --rm \
       -v "${PWD}:${PWD}" \
@@ -37,7 +37,7 @@ case "$1" in
   done
   notatio toc --document=README.md --header="Images" --limiter-left="##" --limiter-right="##" \
     ext --summary-header="Summary" --summary-limiter-left="##" --summary-limiter-right="##" ${paths}
-  notatio toc --document=README.md --header="Table of contents" --limiter-right="## Summary" \
+  notatio toc --document=README.md --header="Table of contents" --limiter-right="## Summary" --index=1 \
     int --start-from-level=1 --start-from-item=1
   docker run --rm \
     -v "${PWD}:${PWD}" \
