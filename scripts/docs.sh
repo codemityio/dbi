@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Note: the set [-/+] x is purely there to turn on and off outputting of the commands being executed.
 if [ "${DEBUG}" = "true" ]; then
   set -x
@@ -35,6 +37,8 @@ case "$1" in
   for target in ${packages//,/ }; do
     paths+=" --path=img/${target}/README.md"
   done
+  output=$(make | sed 's/\x1b\[[0-9;]*m//g')
+  notatio coi --command="make" --output="${output}" --document=README.md --header="\`make\`" --limiter-left="###" --limiter-right="### " --index=1
   notatio toc --document=README.md --header="Images" --limiter-left="##" --limiter-right="##" \
     ext --summary-header="Summary" --summary-limiter-left="##" --summary-limiter-right="##" ${paths}
   notatio toc --document=README.md --header="Table of contents" --limiter-right="## Summary" --index=1 \

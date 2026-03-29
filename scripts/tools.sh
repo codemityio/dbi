@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Note: the set [-/+] x is purely there to turn on and off outputting of the commands being executed.
 if [ "${DEBUG}" = "true" ]; then
   set -x
@@ -9,12 +11,19 @@ case "$1" in
 
 "prep")
   IMAGES="alpine,pandoc" scripts/docker.sh build
+  GOPROXY=direct
   go install github.com/"${VENDOR}"/notatio@latest
   ;;
 
 "diff")
   (git diff --quiet && git diff --cached --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]) || {
     echo "error: changes detected..."
+    echo "---- Unstaged changes ----"
+    git diff
+    echo "---- Staged changes ----"
+    git diff --cached
+    echo "---- Untracked files ----"
+    git ls-files --others --exclude-standard
     exit 1
   }
   ;;

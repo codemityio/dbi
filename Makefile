@@ -26,10 +26,10 @@ diff: ## Check diff to ensure this project consistency
 ## D O C K E R ##
 #################
 
-buildx: ## Build all images (multi-platform)
+buildx: ## Build all images - multi-platform (use IMAGES env var to list specific images e.g. IMAGES=alpine make buildx)
 	@scripts/docker.sh buildx
 
-build: ## Build all images
+build: ## Build all images (use IMAGES env var to list specific images e.g. IMAGES=alpine make build)
 	@scripts/docker.sh build
 
 push: ## Push images
