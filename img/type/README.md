@@ -58,13 +58,13 @@ Options
  --no-integer-strings string                                 Don't convert stringified integers to integers.            
  --no-boolean-strings string                                 Don't convert stringified booleans to booleans.            
  --no-combine-classes string                                 Don't combine similar classes.                             
- --no-ignore-json-refs string                                Treat  as a reference in JSON.                         
+ --no-ignore-json-refs string                                Treat $ref as a reference in JSON.                         
  --graphql-schema FILE                                       GraphQL introspection file.                                
  --graphql-introspect URL                                    Introspect GraphQL schema from a server.                   
  --http-method METHOD                                        HTTP method to use for the GraphQL introspection query.    
  --http-header HEADER                                        Header(s) to attach to all HTTP requests, including the    
                                                              GraphQL introspection query.                               
- -S, --additional-schema FILE                                Register the 's of additional JSON Schema files.        
+ -S, --additional-schema FILE                                Register the $id's of additional JSON Schema files.        
  --alphabetize-properties string                             Alphabetize order of class properties.                     
  --all-properties-optional string                            Make all class properties optional.                        
  --quiet string                                              Don't show issues in the generated code.                   
@@ -361,9 +361,9 @@ Boolean values can be set to false using the 'no-' prefix.
   --additionalProperties
       Default value for additionalProperties, when it is not explicitly set
   --cwd=XXX
-      Root directory for resolving 
+      Root directory for resolving $ref
   --declareExternallyReferenced
-      Declare external schemas referenced via ''?
+      Declare external schemas referenced via '$ref'?
   --enableConstEnums
       Prepend enums with 'const'?
   --inferStringEnumKeysFromValues

@@ -47,7 +47,9 @@ This will get up to speed with deps to work with the project.
 - [`alpine`](img/alpine/README.md) - **Alpine** base image.
 - [`golang-dev`](img/golang-dev/README.md) - **Golang** dev base image.
 - [`golang`](img/golang/README.md) - **Golang** base image.
-- [`graph`](img/graph/README.md) - Base image containing packages to work with diagrams.
+- [`graph`](img/graph/README.md) - Base image containing packages to work with diagrams
+  (<https://gitlab.com/graphviz/graphviz>, <https://github.com/mermaid-js/mermaid-cli> and
+  <https://github.com/plantuml/plantuml>).
 - [`pandoc`](img/pandoc/README.md) - **Pandoc** universal document converter <https://github.com/jgm/pandoc>.
 - [`type`](img/type/README.md) - Base image containing tools to work with types.
 - [`ubuntu`](img/ubuntu/README.md) - **Ubuntu** base image.
