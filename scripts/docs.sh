@@ -19,6 +19,10 @@ case "$1" in
   fi
   for target in ${targets//,/ }; do
     echo "img/${target}/..."
+    path="img/${target}/Makefile"
+    if [ -f "${path}" ]; then
+      make -C "$(dirname "${path}")" docs
+    fi
     notatio toc --document="img/${target}/README.md" --header="Table of contents" --limiter-left="##" --limiter-right="## Summary" --index=1 \
       int --start-from-level=1 --start-from-item=1
     docker run --rm \

@@ -58,40 +58,29 @@ Usage: dot [-Vv?] [-(GNE)name=val] [-(KTlso)<val>] <dot files>
 ### `mermaid`
 
 ``` text
-$ dot --help
-Usage: dot [-Vv?] [-(GNE)name=val] [-(KTlso)<val>] <dot files>
-(additional options for neato)    [-x] [-n<v>]
-(additional options for fdp)      [-L(gO)] [-L(nUCT)<val>]
-(additional options for config)  [-cv]
+$ mmdc --help
+Usage: mmdc [options]
 
- -V          - Print version and exit
- -v          - Enable verbose mode 
- -Gname=val  - Set graph attribute 'name' to 'val'
- -Nname=val  - Set node attribute 'name' to 'val'
- -Ename=val  - Set edge attribute 'name' to 'val'
- -Tv         - Set output format to 'v'
- -Kv         - Set layout engine to 'v' (overrides default based on command name)
- -lv         - Use external library 'v'
- -ofile      - Write output to 'file'
- -O          - Automatically generate an output filename based on the input filename with a .'format' appended. (Causes all -ofile options to be ignored.) 
- -P          - Internally generate a graph of the current plugins. 
- -q[l]       - Set level of message suppression (=1)
- -s[v]       - Scale input by 'v' (=72)
- -y          - Invert y coordinate in output
-
- -n[v]       - No layout mode 'v' (=1)
- -x          - Reduce graph
-
- -Lg         - Don't use grid
- -LO         - Use old attractive force
- -Ln<i>      - Set number of iterations to i
- -LU<i>      - Set unscaled factor to i
- -LC<v>      - Set overlap expansion factor to v
- -LT[*]<v>   - Set temperature (temperature factor) to v
-
- -c          - Configure plugins (Writes $prefix/lib/graphviz/config 
-               with available plugin information.  Needs write privilege.)
- -?          - Print usage and exit
+Options:
+  -V, --version                                   output the version number
+  -t, --theme [theme]                             Theme of the chart (choices: "default", "forest", "dark", "neutral", default: "default")
+  -w, --width [width]                             Width of the page (default: 800)
+  -H, --height [height]                           Height of the page (default: 600)
+  -i, --input <input>                             Input mermaid file. Files ending in .md will be treated as Markdown and all charts (e.g. ```mermaid (...)``` or :::mermaid (...):::) will be extracted and generated. Use `-` to read from stdin.
+  -o, --output [output]                           Output file. It should be either md, svg, png, pdf or use `-` to output to stdout. Optional. Default: input + ".svg"
+  -a, --artefacts [artefacts]                     Output artefacts path. Only used with Markdown input file. Optional. Default: output directory
+  -e, --outputFormat [format]                     Output format for the generated image. (choices: "svg", "png", "pdf", default: Loaded from the output file extension)
+  -b, --backgroundColor [backgroundColor]         Background color for pngs/svgs (not pdfs). Example: transparent, red, '#F0F0F0'. (default: "white")
+  -c, --configFile [configFile]                   JSON configuration file for mermaid.
+  -C, --cssFile [cssFile]                         CSS file for the page.
+  -I, --svgId [svgId]                             The id attribute for the SVG element to be rendered.
+  -s, --scale [scale]                             Puppeteer scale factor (default: 1)
+  -f, --pdfFit                                    Scale PDF to fit chart
+  -q, --quiet                                     Suppress log output
+  -p --puppeteerConfigFile [puppeteerConfigFile]  JSON configuration file for puppeteer.
+  --iconPacks <icons...>                          Icon packs to use, e.g. @iconify-json/logos. These should be Iconify NPM packages that expose a icons.json file, see https://iconify.design/docs/icons/json.html. These will be downloaded from https://unkpg.com when needed. (default: [])
+  --iconPacksNamesAndUrls <prefix#iconsurl...>    Icon packs to use, e.g. azure#https://raw.githubusercontent.com/NakayamaKento/AzureIcons/refs/heads/main/icons.json where the name (prefix) of the icon pack is defined before the "#" and the url of the json definition after the "#". These should be Iconify json file formatted as IconifyJson, see https://iconify.design/docs/icons/json.html. These will be downloaded when needed. (default: [])
+  -h, --help                                      display help for command
 ```
 
 ### `plantuml`

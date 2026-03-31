@@ -10,9 +10,9 @@ docs:
 		--limiter-left=### \
 		--limiter-right="### " \
 		--shell-name=text
-	@output=$$(docker run --rm -v "$${PWD}:$${PWD}" -w "$${PWD}" codemityio/graph:latest dot --help); \
+	@output=$$(docker run --rm -v "$${PWD}:$${PWD}" -w "$${PWD}" codemityio/graph:latest mmdc --help); \
 	notatio coi \
-		--command="dot --help" \
+		--command="mmdc --help" \
 		--output="$$output" \
 		--document=README.md \
 		--header='`mermaid`' \
