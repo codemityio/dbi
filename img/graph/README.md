@@ -8,6 +8,7 @@
   - [`mermaid`](#mermaid)
   - [`plantuml`](#plantuml)
 - [Usage](#usage)
+- [Third party software](#third-party-software)
 
 ## Summary
 
@@ -179,3 +180,16 @@ See also:
 ## Usage
 
 Use it as a base image to be consistent across the projects. Can be used as abase image for the pipeline runners.
+
+## Third party software
+
+This container image includes the following third-party components:
+
+- **PlantUML** (<https://plantuml.com>) — licensed under GPL v3
+  <https://github.com/plantuml/plantuml/blob/master/license.txt> - no modifications made.
+
+- **Graphviz** (<https://graphviz.org>) — licensed under EPL v1.0
+  <https://gitlab.com/graphviz/graphviz/-/blob/main/LICENSE> - no modifications made.
+
+- **Mermaid** (<https://mermaid.js.org>) — licensed under MIT Copyright (c) 2014-2024 Knut Sveidqvist - no modifications
+  made.
