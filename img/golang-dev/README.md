@@ -38,3 +38,6 @@ This container image includes the following third-party components.
 
 - **govulncheck** (<https://golang.org/x/vuln>) — licensed under BSD-3-Clause
   <https://cs.opensource.google/go/x/vuln/+/master:LICENSE> - no modifications made.
+
+- **go-licenses** (<https://github.com/google/go-licenses>) — licensed under Apache-2.0
+  <https://github.com/google/go-licenses/blob/master/LICENSE> - no modifications made.
