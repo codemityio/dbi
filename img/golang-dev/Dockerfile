@@ -16,6 +16,7 @@ RUN go install github.com/hairyhenderson/gomplate/v3/cmd/gomplate@latest \
     && go install go.uber.org/mock/mockgen@latest \
     && go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest \
     && go install golang.org/x/vuln/cmd/govulncheck@latest \
+    && go install github.com/google/go-licenses/v2@latest \
     && mv /root/go/bin/* /usr/local/bin \
     && rm -rf /root/go /root/.cache /tmp/* /var/tmp/*
 
