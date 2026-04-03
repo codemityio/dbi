@@ -390,7 +390,7 @@ Use it to generate types from **JSON** schemas.
 
 ## Third party software
 
-This container image includes the following third-party components:
+This container image includes the following third-party components.
 
 - **quicktype** (<https://github.com/glideapps/quicktype>) — licensed under Apache-2.0
   <https://github.com/glideapps/quicktype/blob/master/LICENSE> - no modifications made.

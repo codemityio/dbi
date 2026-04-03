@@ -16,7 +16,7 @@ Use it as a base image to be consistent across the projects. Can be used as abas
 
 ## Third party software
 
-This container image includes the following third-party components:
+This container image includes the following third-party components.
 
 - **Go** (<https://go.dev>) — licensed under BSD-3-Clause https://github.com/golang/go/blob/master/LICENSE No
   modifications made.

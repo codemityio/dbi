@@ -183,7 +183,7 @@ Use it as a base image to be consistent across the projects. Can be used as abas
 
 ## Third party software
 
-This container image includes the following third-party components:
+This container image includes the following third-party components.
 
 - **PlantUML** (<https://plantuml.com>) — licensed under GPL v3
   <https://github.com/plantuml/plantuml/blob/master/license.txt> - no modifications made.
