@@ -5,6 +5,7 @@
 - [Summary](#summary)
 - [Manual](#manual)
 - [Usage](#usage)
+- [Third party software](#third-party-software)
 
 ## Summary
 
@@ -126,3 +127,10 @@ pandoc [OPTIONS] [FILES]
 ## Usage
 
 Base image to make it easier to use **Pandoc** across the platforms.
+
+## Third party software
+
+This container image includes the following third-party components.
+
+- **Pandoc** (<https://pandoc.org>) — licensed under GPL v2 or later. Copyright (c) 2006-2024 John MacFarlane
+  <https://github.com/jgm/pandoc/blob/main/COPYING.md> - no modifications made.

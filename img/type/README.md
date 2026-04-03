@@ -8,6 +8,7 @@
   - [`quicktype`](#quicktype)
   - [`json2ts`](#json2ts)
 - [Usage](#usage)
+- [Third party software](#third-party-software)
 
 ## Summary
 
@@ -386,3 +387,14 @@ Boolean values can be set to false using the 'no-' prefix.
 ## Usage
 
 Use it to generate types from **JSON** schemas.
+
+## Third party software
+
+This container image includes the following third-party components.
+
+- **quicktype** (<https://github.com/glideapps/quicktype>) — licensed under Apache-2.0
+  <https://github.com/glideapps/quicktype/blob/master/LICENSE> - no modifications made.
+
+- **json-schema-to-typescript** (<https://github.com/bcherny/json-schema-to-typescript>) — licensed under MIT
+  Copyright (c) Boris Cherny <https://github.com/bcherny/json-schema-to-typescript/blob/master/LICENCE.md> - no
+  modifications made.
