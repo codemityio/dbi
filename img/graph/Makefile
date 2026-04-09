@@ -5,7 +5,7 @@ docs:
 	notatio coi \
 		--command="dot --help" \
 		--output="$$output" \
-		--document=README.md \
+		--document-path=README.md \
 		--header='`graphviz`' \
 		--limiter-left=### \
 		--limiter-right="### " \
@@ -14,7 +14,7 @@ docs:
 	notatio coi \
 		--command="mmdc --help" \
 		--output="$$output" \
-		--document=README.md \
+		--document-path=README.md \
 		--header='`mermaid`' \
 		--limiter-left=### \
 		--limiter-right="### " \
@@ -23,7 +23,7 @@ docs:
 	notatio coi \
 		--command="java -jar /usr/local/lib/plantuml.jar --help" \
 		--output="$$output" \
-		--document=README.md \
+		--document-path=README.md \
 		--header='`plantuml`' \
 		--limiter-left=### \
 		--limiter-right="## " \
