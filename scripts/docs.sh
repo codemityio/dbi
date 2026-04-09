@@ -23,7 +23,7 @@ case "$1" in
     if [ -f "${path}" ]; then
       make -C "$(dirname "${path}")" docs
     fi
-    notatio toc --document="img/${target}/README.md" --header="Table of contents" --limiter-left="##" --limiter-right="## Summary" --index=1 \
+    notatio toc --document-path="img/${target}/README.md" --header="Table of contents" --limiter-left="##" --limiter-right="## Summary" --index=1 \
       int --start-from-level=1 --start-from-item=1
     docker run --rm \
       -v "${PWD}:${PWD}" \
@@ -42,10 +42,10 @@ case "$1" in
     paths+=" --path=img/${target}/README.md"
   done
   output=$(make | sed 's/\x1b\[[0-9;]*m//g')
-  notatio coi --command="make" --output="${output}" --document=README.md --header="\`make\`" --limiter-left="###" --limiter-right="### " --index=1
-  notatio toc --document=README.md --header="Images" --limiter-left="##" --limiter-right="##" \
+  notatio coi --command="make" --output="${output}" --document-path=README.md --header="\`make\`" --limiter-left="###" --limiter-right="### " --index=1
+  notatio toc --document-path=README.md --header="Images" --limiter-left="##" --limiter-right="##" \
     ext --summary-header="Summary" --summary-limiter-left="##" --summary-limiter-right="##" ${paths}
-  notatio toc --document=README.md --header="Table of contents" --limiter-right="## Summary" --index=1 \
+  notatio toc --document-path=README.md --header="Table of contents" --limiter-right="## Summary" --index=1 \
     int --start-from-level=1 --start-from-item=1
   docker run --rm \
     -v "${PWD}:${PWD}" \

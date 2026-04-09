@@ -5,7 +5,7 @@ docs:
 	notatio coi \
 		--command="quicktype --help" \
 		--output="$$output" \
-		--document=README.md \
+		--document-path=README.md \
 		--header='`quicktype`' \
 		--limiter-left=### \
 		--limiter-right=### \
@@ -14,7 +14,7 @@ docs:
 	notatio coi \
 		--command="json2ts --help" \
 		--output="$$output" \
-		--document=README.md \
+		--document-path=README.md \
 		--header='`json2ts`' \
 		--limiter-left=### \
 		--limiter-right=## \

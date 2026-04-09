@@ -5,7 +5,7 @@ docs:
 	notatio coi \
 		--command="pandoc --help" \
 		--output="$$output" \
-		--document=README.md \
+		--document-path=README.md \
 		--header=Manual \
 		--limiter-left=## \
 		--limiter-right="## " \
