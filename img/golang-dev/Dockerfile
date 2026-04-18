@@ -3,7 +3,7 @@ ARG VENDOR="vendor"
 FROM ${VENDOR}/golang:latest AS golang
 FROM ${VENDOR}/alpine:latest AS final
 
-RUN apk add --no-cache gcc musl-dev make git jq bash openssl
+RUN apk add --no-cache bash gcc libc-dev binutils binutils-gold make git jq openssl
 
 COPY --from=golang /usr/local/go /usr/local/go
 
