@@ -22,6 +22,8 @@ RUN go install github.com/hairyhenderson/gomplate/v3/cmd/gomplate@latest \
 
 COPY entrypoint.sh /
 
+RUN adduser -D -h /home/commander -s /bin/bash commander
+
 RUN ["chmod", "+x", "/entrypoint.sh"]
 
 ENTRYPOINT ["/entrypoint.sh"]
