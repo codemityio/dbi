@@ -1,1 +1,1 @@
-FROM ubuntu:24.04 AS final
+FROM ubuntu:26.04 AS final

@@ -10,7 +10,7 @@ fi
 case "$1" in
 
 "prep")
-  IMAGES="alpine,pandoc" scripts/docker.sh build
+  IMAGES="alpine,graph,pandoc,type" scripts/docker.sh build
   GOPROXY=direct
   go install github.com/"${VENDOR}"/notatio@latest
   ;;
