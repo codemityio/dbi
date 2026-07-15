@@ -4,6 +4,8 @@ FROM ${VENDOR}/alpine:latest AS final
 
 ENV LANGUAGE=en_US.UTF-8
 ENV LANG=C.UTF-8
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
 WORKDIR /opt/app
 
@@ -19,7 +21,7 @@ RUN apk add --no-cache \
         dumb-init \
         libc6-compat \
         ttf-droid font-droid-nonlatin font-noto-cjk font-noto-emoji terminus-font ttf-dejavu ttf-freefont ttf-font-awesome ttf-inconsolata ttf-linux-libertine \
-    && npm install -g --omit=dev --no-update-notifier --no-fund @mermaid-js/mermaid-cli \
+    && npm install -g --omit=dev --no-update-notifier --no-fund @mermaid-js/mermaid-cli@11.16.0 \
     && npm cache clean --force \
     && rm -rf /root/.npm /root/.cache /tmp/* /var/tmp/* \
     && fc-cache -f
