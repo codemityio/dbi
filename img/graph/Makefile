@@ -10,7 +10,7 @@ docs:
 		--limiter-left=### \
 		--limiter-right="### " \
 		--shell-name=text
-	@output=$$(docker run --rm -v "$${PWD}:$${PWD}" -w "$${PWD}" codemityio/graph:latest mmdc --help); \
+	@output=$$(docker run --cpus=2 --rm -v "$${PWD}:$${PWD}" -w "$${PWD}" codemityio/graph:latest mmdc --help); \
 	notatio coi \
 		--command="mmdc --help" \
 		--output="$$output" \
